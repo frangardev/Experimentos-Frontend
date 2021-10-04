@@ -4,7 +4,7 @@ body{
     background-color: yellow;
 }
 
-button{
+.button{
 
     margin: 300px auto;
     padding: .5em 1em;
@@ -15,10 +15,11 @@ button{
     background-color: black;
     box-shadow: 5px 0  black, -5px 0 black, 0 5px black, 0 -5px black;
 }
-button:hover{
+.button:hover{
     /* box-shadow: 7px 0  black, -7px 0 black, 0 7px black, 0 -7px black; */
-    /* font-size: 1.1rem; */
+    font-size: 1.05rem;
 }
-button:active{
-    box-shadow: 0 0 black;
+.button:active{
+    background-color: gray;
+    box-shadow: 3px 0  black, -3px 0 black, 0 3px black, 0 -3px black;
 }
