@@ -4,5 +4,17 @@
     box-sizing: border-box;
 }
 body{
-    background-color: rgb(115, 97, 159);
+    background-color: mediumslateblue;
+}
+.slider{
+    /* display: flex; */
+    height: 90vh;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.slider__img{
+    width: 100%;
+    height: auto;
+    margin-right: -4px;
 }
