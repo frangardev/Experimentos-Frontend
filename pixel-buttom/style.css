@@ -5,21 +5,45 @@ body{
 }
 
 .button{
-
     margin: 300px auto;
     padding: .5em 1em;
     font-size: 1rem;
     font-weight: 700;
-    color: white;
     border-color:  transparent;
+}
+.button--1{
+    color: white;
     background-color: black;
     box-shadow: 5px 0  black, -5px 0 black, 0 5px black, 0 -5px black;
 }
-.button:hover{
+.button--1:hover{
     /* box-shadow: 7px 0  black, -7px 0 black, 0 7px black, 0 -7px black; */
     font-size: 1.05rem;
 }
-.button:active{
+.button--1:active{
     background-color: gray;
     box-shadow: 3px 0  black, -3px 0 black, 0 3px black, 0 -3px black;
+}
+
+.button--2{
+    background-color: white;
+    position: relative;
+    box-shadow: 5px 0  black, -5px 0 black, 0 5px black, 0 -5px black;
+}
+.button--2::after,
+.button--2::before{
+    content: '';
+    display: inline-block;
+    height: 5px;
+    width: calc(100% - 7px);
+    background-color: white;
+    position: absolute;
+    left: 3px;
+    box-shadow: 7px 0  black, -7px 0 black, 0 0px black, 0 -0px black;
+}
+.button--2::after{
+    top: -2px;
+}
+.button--2::before{
+    bottom: -2px;
 }
