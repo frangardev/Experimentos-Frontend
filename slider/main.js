@@ -1,0 +1,31 @@
+const sliderImg = document.querySelector('#slider__container')
+const slider2 = document.querySelector('#slider')
+const cantidadImg = document.querySelectorAll('#slider .slider__img')
+
+class Slider {
+    constructor(selector){
+        // para que this no cambie
+        this.move = this.move.bind(this)
+        this.slider = document.querySelector(selector)
+        this.interval = null
+        this.position = 0
+        this.start()
+    }
+    start(){
+        this.interval = window.setInterval(this.move, 3000) 
+    }
+    move(){
+        this.position += 1
+        this.moveTo(this.position)
+    }
+    moveTo(index){
+        let left = index * 100
+
+        this.slider.querySelector('.slider__container').style.left = `-${left}%`
+    }
+}
+
+// Para que el slider solo este en el scope local y no interfiera con nada lo encerramos en un closure
+(function(){
+    new Slider('#slider')
+})
