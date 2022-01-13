@@ -12,20 +12,20 @@
 
 
   /* grid-template-areas:
-    ".      sq1     sq1     sq2     .       .      .     sq3     .       ."
-    ".      sq1     sq1     sq4     sq4     sq4    sq4   sq4     .       ."
+    ".      .       .     sq2     .       .      .     sq3     .       ."
+    ".      .       .     sq4     sq4     sq4    sq4   sq4     .       ."
     "sq6    .       .       sq4     sq4     sq4    sq4   sq4     sq7     ."
     ".      .       .       sq4     sq4     sq4    sq4   sq4     .       ."
   ; */
 
 
-}
- */
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+body{
+    width: 100%;
 }
 
 .header{
@@ -42,98 +42,132 @@
   width:100%;
   max-width: 850px;
   height: auto;
-  min-height: 100px;
   display: grid;
   gap: 10px;
-  grid-template:  repeat(4, 1fr) / repeat(10, 1fr);
+  grid-template:  repeat(4, 1fr) / repeat(9, 1fr);
   grid-template-areas:
-    ".      sq1     sq1     sq2     .       .      .     sq3     .       ."
-    ".      sq1     sq1     sq4     sq4     sq4    sq4   sq4     .       ."
-    "sq6    .       .       sq4     sq4     sq4    sq4   sq4     sq7     l"
-    ".      .       .       sq4     sq4     sq4    sq4   sq4     .       ."
+    "sq1     sq1     sq2     .       .      .     sq3     .       ."
+    "sq1     sq1     sq4     sq4     sq4    sq4   sq4     sq4     ."
+    "sq6     .       sq4     sq4     sq4    sq4   sq4     sq4     ."
+    ".       .       sq4     sq4     sq4    sq4   sq4     sq4     ."
   ;
-  border: 2px solid red;
-  margin: 0;
 }
 
 .drawing-header{
-    grid-column: 1 / 11;
+    grid-column: 1 / 10;
     grid-row: 1 / 5;
-    justify-self: center;
-    width: calc(100% - 140px);
+    align-self: end;
+    width: 100%;
     z-index: 10;
 }
 
 .square{
   background: var(--square-bg);
-  /* width: 100%;
-  height: 100%; */
 }
 
 .square-1{
-    grid-area: sq1;
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
     width: 80%;
-    height: 50%;
+    height: 100%;
     margin: 0 10px;
     place-self: center start;
 }
 .square-2{
   grid-area: sq2;
-
-  /* grid-column: 2 / 4;
-  grid-row: 1 / 2; */
-
-  width: 2.5em;
-  height: 2.5em;
-  place-self: center end;
+  width: 1em;
+  height: 1em;
+  place-self: start end;
   margin-bottom: 30px;
 }
 .square-3{
   grid-area: sq3;
-  width: 2em;
-  height: 2em;
-  place-self: start;
-  margin: 5px 0 0 10px;
+  width: .8em;
+  height: .8em;
+  place-self: start center;
 }
 .square-4{
   grid-area: sq4;
-  width: 110%;
-  height: calc(100% - 4.2em);
-  position: relative;
-  bottom: -4.2em;
-  left: -2.5em;
+  place-self: end start;
+  width: 90%;
+  height: calc(100% - 1.5em);
 }
 .square-5{
-  grid-column: 8 / 10;
+  grid-column: 7 / 9;
   grid-row: 2 / 3;
-  margin-left: 10px;
   width: 55%;
   height: calc(100% - 15px);
-  place-self: start;
+  place-self: start center;
 }
 .square-6{
   grid-area: sq6;
-  width: 4em;
-  height: 4em;
-  place-self: end;
-  position: relative;
-  bottom: -20px;
-  margin-left: 2em;
+  width: 70%;
+  height: 40%;
+  place-self: center start;
 }
 .square-7{
-  grid-area: sq7;
+  grid-column: 8 / 9;
+  grid-row: 3 / 4;
   width: 50%;
   height: 35%;
-  place-self: start center;
+  place-self: start end;
+  position: relative;
+  top: -5px;
+  left: 5px;
 } 
 
 @media (min-width: 620px) {
-    .header{
-        background-color: cornflowerblue;
+    .drawing-header__container{
+        grid-template:  repeat(4, 1fr) / repeat(10, 1fr);
+        grid-template-areas:
+          ".      sq1     sq1     sq2     .       .      .     sq3     .       ."
+          ".      sq1     sq1     sq4     sq4     sq4    sq4   sq4     .       ."
+          "sq6    .       .       sq4     sq4     sq4    sq4   sq4     sq7     ."
+          ".      .       .       sq4     sq4     sq4    sq4   sq4     .       ."
+        ;
+      }
+    .drawing-header{
+        grid-column: 1 / 11;
+        justify-self: center;
+        width: calc(100% - 140px);
     }
-}
-@media (min-width: 900px) {
-    .header{
-        background-color: crimson;
+    .square-1{
+        grid-area: sq1;
+        width: 80%;
+        height: 50%;
     }
+    .square-2{
+        width: 1.5em; /*lo cambie*/
+        height: 1.5em; /*lo cambie*/
+        place-self: center end;
+    }
+    .square-3{
+        width: 1.2em; /*lo cambie*/
+        height: 1.2em; /*lo cambie*/
+        place-self: start;
+        margin: 5px 0 0 10px;
+    }
+    .square-4{
+        width: 110%;
+        height: calc(100% - 4em);
+        position: relative;
+        left: -2em; /*lo cambie*/
+    }
+    .square-5{
+        grid-column: 8 / 10;
+        margin-left: 10px;
+        place-self: start;
+    }
+    .square-6{
+        width: 3em; /*lo cambie*/
+        height: 3em; /*lo cambie*/
+        place-self: end;
+        position: relative;
+        bottom: -20px;
+        margin-left: 2em;
+    }
+    .square-7{
+        grid-area: sq7;
+        position: static; 
+      }
 }
