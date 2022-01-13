@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,17 +10,21 @@
 <body>
     <main>
         <section class="video__container">
-            <video id="video">
+            <video id="video" class="video" width="600px">
                 <source src="./assets/gallo-con-tenis.mp4"> 
             </video>
     
-            <section class="media-player">
-                <button id="play">l&gt;</button>
+            <section class="media__player--controls" id="controls">
+                <div class="progress">
+                    <div class="bar"></div>
+                </div>
+                <button id="play"> press<i class="icons" >|></i></button>
                 <button id="backward">&lt;&lt;</button>
                 <button id="stop">stop</button>
                 <button id="forward">&gt;&gt;</button>
             </section>
         </section>
+        <h1 class="title__video">Gallo con tenis</h1>
     </main>
 
     <script src="./src/main.js"></script>
