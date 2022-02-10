@@ -7,18 +7,6 @@
     --square-bg: rgba(49, 45, 71, .5);
 }
 
-/* body{
-  background: var(--primary-color);
-
-
-  /* grid-template-areas:
-    ".      .       .     sq2     .       .      .     sq3     .       ."
-    ".      .       .     sq4     sq4     sq4    sq4   sq4     .       ."
-    "sq6    .       .       sq4     sq4     sq4    sq4   sq4     sq7     ."
-    ".      .       .       sq4     sq4     sq4    sq4   sq4     .       ."
-  ; */
-
-
 *{
     margin: 0;
     padding: 0;
@@ -82,7 +70,7 @@ body{
     position: relative;
     top: 100%;
     left: 100%;
-    opacity: .4;
+    opacity: .1;
     
     animation: moveSquare 1s 1;
     animation-delay: .6s;
@@ -142,7 +130,7 @@ body{
   position: relative;
   top: 30%;
   left: -100%;
-  opacity: .4;
+  opacity: .05;
   
   animation: moveSquare 1s 1;
   animation-delay: .6s;
@@ -223,13 +211,9 @@ body{
         margin: 5px 0 0 10px;
     }
     .square-4{
-        width: 110%;
-        height: calc(100% - 4em);
-        place-self: end start;
-        position: relative;
-        left: -2em; 
-        /* animation-fill-mode: none; */
         animation-name: widthSquare-desktop;
+        position: relative;
+        left: -2em;
     }
     .square-5{
         grid-column: 8 / 10;
@@ -295,16 +279,13 @@ body{
 
 @keyframes widthSquare-desktop {
     from{
-        place-self: center;
+        place-self: end center;
         width: 30%;
         height: 30%;
-    }
-    95%{
-        place-self: end center;
     }
     to{
         place-self: end start;
         width: 90%;
-        height: calc(100% - 4em);
+        height: calc(100% - 4em); 
     }
 }
